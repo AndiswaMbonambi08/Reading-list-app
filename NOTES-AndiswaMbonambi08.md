@@ -1,6 +1,6 @@
 ## Assignment 2.1
 
-### Question 1 — Scrum or Kanban, for two different contexts
+### Question 1: Scrum or Kanban, for two different contexts
 
 **Daily App (Shelf):** Kanban.
 Shelf is solo, worked in short, irregular sessions, and the scope will shift as I actually
@@ -21,7 +21,7 @@ project.
 My answer differs between the two because the deciding factor isn't the type of project,
 it's the number of people who need to stay coordinated.
 
-### Question 2 — A real trade-off
+### Question 2: A real trade-off
 
 **Value:** Responding to change over following a plan.
 
@@ -34,7 +34,7 @@ learn without a rewrite. Still, a completely planless backlog would leave me dec
 priorities from scratch every session, so I'll keep just enough structure to know the shape
 of the whole project.
 
-### Question 3 — Critique and redesign
+### Question 3: Critique and redesign
 
 **Problems with the "TaskBoard Pro" brief:**
 
