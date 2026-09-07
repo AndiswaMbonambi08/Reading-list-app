@@ -1,4 +1,4 @@
-Agile Redesign — Shelf
+Agile Redesign: Shelf
 
 Problems with a Waterfall-style plan (from Assignment 2.1, Question 3)
 No demos until the build phase is complete — violates early/continuous delivery and "working software as the primary measure of progress."
