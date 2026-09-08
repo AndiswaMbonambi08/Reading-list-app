@@ -53,3 +53,38 @@ of the whole project.
   add a book and move it between columns; no ratings, notes, or persistence yet.
 - Iteration 2: persist data between sessions; add rating + notes when a card reaches
   Finished; edit/delete a card.
+
+## Assignment 2.2
+
+### Question 1 — Roles, solo and shared
+For TrackFlow, the roles get assigned in class since it's cohort-wide, so I don't have a fixed answer yet. My guess is I'll end up in a Dev Team seat by default, with Product Owner and Scrum Master responsibilities split or rotated across the group.
+
+For Shelf, I'm all three roles, and the one I expect to neglect first is Product Owner style discipline, specifically writing a real Definition of Ready before pulling something into a sprint. When you're also the developer, it's tempting to skip straight to building whatever feels interesting that session and skip stating acceptance criteria, since there's no one else who needs the item spelled out. The concrete habit that would stop this: before moving any backlog item into a sprint backlog, I write its Definition of Ready check as an actual short checklist against it, even if it takes two minutes. If I can't check every box, it doesn't move.
+
+### Question 2 — Definition of Ready, Definition of Done
+Writing this for Boards & Cards rather than Auth, since Auth is out of scope for Iteration 1 per my Assignment 2.1 redesign. Boards & Cards is the epic I'm actually building first.
+
+Definition of Ready (Boards & Cards):
+- The item has a one line user facing description of the interaction, for example "user can add a book card to Want to Read".
+- It lists two or three acceptance criteria stated as testable behaviour, not vague goals.
+- It has no unresolved dependency on Auth or persistence, since neither exists yet in Iteration 1.
+- The screen or component it lives in is named.
+- It's small enough to finish in one solo working session, roughly under three hours.
+
+Definition of Done (Boards & Cards):
+- The board renders the three fixed columns: Want to Read, Currently Reading, Finished.
+- A card can be added with title and author and appears in the correct column.
+- A card can be moved between columns and the UI reflects the move immediately.
+- I've manually walked through add, move, move at least once without errors.
+- No console errors during that walkthrough.
+- The code is committed to main and runs locally without build errors.
+
+### Question 3 — The artifact most at risk
+Of Product Backlog, Sprint Backlog and Increment, Sprint Backlog is the one most at risk of being skipped or faked in a solo daily cadence project like Shelf. The Product Backlog is just a running list, easy to keep honest since it's low stakes to add or remove an item. The Increment happens almost automatically, since working solo means whatever I build each session is the increment by definition.
+
+The Sprint Backlog is different because it's a commitment made in advance, and without a partner checking whether I stuck to it, it's easy to quietly swap items mid sprint and then write the sprint backlog after the fact to match whatever I actually did. The real cost of skipping it isn't that the work doesn't get done. It's that I lose the one artifact that would tell me whether my planning and estimates were any good. Without a genuine sprint backlog, there's no way to notice scope creep while it's happening, and no learning signal for the next planning session.
+
+### NOTES.md Updates
+1. The role I said I'd neglect first was Product Owner style discipline, specifically writing a real Definition of Ready before pulling something into a sprint. Actually doing Part 2 confirmed rather than changed that. It was genuinely tempting to skip straight to listing backlog items I found interesting and skip writing acceptance criteria for the Boards & Cards items until I forced myself to check each one against the Definition of Ready.
+
+2. Yes. The Definition of Ready blocked every Auth item from Sprint 1, even though Auth is listed first in my epics and instinctively felt like it should come first. It also blocked persistence and the rating and notes feature, both of which I expected to sneak into Sprint 1 since they felt small. Writing the Definition of Ready down made it obvious they all depend on something that doesn't exist yet in Iteration 1.
