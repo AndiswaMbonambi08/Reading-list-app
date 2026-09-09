@@ -144,3 +144,21 @@ Nothing about which items belonged in Sprint 1 changed, the Definition of Ready 
 
 When I got to Task 9's saved filter, my first instinct was to solve it the same way as Task 5, tag the Sprint 1 items and filter by tag. That would have worked by accident, but it's the wrong mechanic for the same reason Question 3 argues Iteration should be a field: tags don't enforce one value, so nothing would stop a task from picking up both a "Sprint 1" tag and a "Sprint 2" tag later, and the filter would quietly start returning wrong results. Using the Iteration field instead means the filter can only ever be accurate.
 
+
+
+
+
+#### \### Asana Projects
+
+
+
+###### \- QuickNotes (practice): 
+
+https://app.asana.com/1/1218293804888571/project/1218294161837579/list/1218296317073426
+
+
+
+###### \- Shelf (Daily App): 
+
+https://app.asana.com/1/1218293804888571/project/1218333052944223/list/1218333673620846
+
