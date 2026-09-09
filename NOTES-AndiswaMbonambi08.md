@@ -88,3 +88,32 @@ The Sprint Backlog is different because it's a commitment made in advance, and w
 1. The role I said I'd neglect first was Product Owner style discipline, specifically writing a real Definition of Ready before pulling something into a sprint. Actually doing Part 2 confirmed rather than changed that. It was genuinely tempting to skip straight to listing backlog items I found interesting and skip writing acceptance criteria for the Boards & Cards items until I forced myself to check each one against the Definition of Ready.
 
 2. Yes. The Definition of Ready blocked every Auth item from Sprint 1, even though Auth is listed first in my epics and instinctively felt like it should come first. It also blocked persistence and the rating and notes feature, both of which I expected to sneak into Sprint 1 since they felt small. Writing the Definition of Ready down made it obvious they all depend on something that doesn't exist yet in Iteration 1.
+
+## Assignment 2.3
+
+### Question 1 - Choosing a view
+
+Board will be my Daily app's primary view day to day. Shelf data model already is Board > Column >Card, So basically the Board view in Asana just mirrors the app: I open it, see Want to Read / Currently Reading / Finished as columns, and drag cards across as I read. That's the daily-use motion.
+
+List still earns a place for anything Board hides: bulk-editing custom fields across many cards at once, or scanning every backlog item as a flat, sortable table when I'm grooming the backlog rather than working through it.
+
+Timeline is for iteration planning, not daily work. When I'm laying Iteration 1 and Iteration 2 out against each other, or checking that a dependency (say, persistence landing before ratings/notes can work) actually lines up in time, Timeline shows that sequencing in a way Board can't.
+
+### Question 2 - Custom fields, deliberately
+
+- **Epic** (Auth / Boards & Cards / Book Details & Notes / Search & Filter / Reminders) - lets me filter the project down to one epic and see at a glance how much of it is done, so I know which epic to pull the next card from.
+- **Iteration** (Iteration 1 / Iteration 2 / Backlog) - the filter that answers "what's actually in scope this week" versus everything else sitting in the backlog for later.
+- **Priority** (High / Medium / Low) - decides what I pull in next whenever I have slack time inside an iteration instead of working top-to-bottom by instinct.
+- **Effort** (S / M / L) - a capacity check before I commit a card to an iteration; if Iteration 1's cards are mostly L, that's a signal I've overcommitted a one-week MVP.
+
+Each one exists because it changes a decision I actually make. I left Story Points off on purpose: Shelf is solo with irregular sessions, so point estimation for velocity tracking has nobody to report to and nothing to calibrate against. Effort as a rough S/M/L sizing does the one job I need (sanity-check iteration scope) without the overhead.
+
+### Question 3 - Tag or field?
+
+**Tag:** something like "learning" or "spike", a loose, cross-cutting label for a card that's really about exploring or practicing something rather than shipping a feature. It's not specific to Shelf; I'd want the same tag on cards in other Bitcube assignments too.
+
+**Field:** Iteration. It's structured, single-select, and only makes sense scoped to this one project.
+
+If I swapped them:
+- Iteration as a tag would lose the "exactly one value" constraint. A card could end up tagged both Iteration 1 and Iteration 2, and I couldn't group Board columns or build a clean iteration filter off something that isn't enforced to be single-valued.
+- "Learning" as a custom field would get trapped inside the Shelf project. It wouldn't follow the card if I wanted to spot every learning-type task across Assignment 1.3, Assignment 2.2, and Shelf at once. I'd end up rebuilding the same field per project instead of reusing one tag across the whole workspace.
