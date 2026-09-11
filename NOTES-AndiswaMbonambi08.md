@@ -89,6 +89,8 @@ Of Product Backlog, Sprint Backlog and Increment, Sprint Backlog is the one most
 
 The Sprint Backlog is different because it's a commitment made in advance, and without a partner checking whether I stuck to it, it's easy to quietly swap items mid sprint and then write the sprint backlog after the fact to match whatever I actually did. The real cost of skipping it isn't that the work doesn't get done. It's that I lose the one artifact that would tell me whether my planning and estimates were any good. Without a genuine sprint backlog, there's no way to notice scope creep while it's happening, and no learning signal for the next planning session.
 
+
+
 ### NOTES.md Updates
 
 1. The role I said I'd neglect first was Product Owner style discipline, specifically writing a real Definition of Ready before pulling something into a sprint. Actually doing Part 2 confirmed rather than changed that. It was genuinely tempting to skip straight to listing backlog items I found interesting and skip writing acceptance criteria for the Boards \& Cards items until I forced myself to check each one against the Definition of Ready.
@@ -161,4 +163,142 @@ https://app.asana.com/1/1218293804888571/project/1218294161837579/list/121829631
 ###### \- Shelf (Daily App): 
 
 https://app.asana.com/1/1218293804888571/project/1218333052944223/list/1218333673620846
+
+
+
+## Assignment 2.4
+
+### Question 1 - Rewrite Sprint 1 as real user stories
+
+1. As a returning reader, I want to see a board representing my whole shelf so that I can tell at a glance what I'm reading, what's next, and what I've finished without scanning a flat list.
+
+2\. As a reader who just picked up a new book, I want to add a book card with a title and author so that I can start tracking it immediately.
+
+3\. As a reader progressing through a book, I want to move a card between columns (Want to Read, Currently Reading, Finished) so that my shelf reflects where I actually am with each book.
+
+4\. As a reader who made a mistake or learned new details, I want to edit a card's title or   author after adding it so that my shelf stays accurate.
+
+5\. As a reader who added something by mistake or no longer cares to track it, I want to delete a card so that my shelf only shows books I'm actually tracking.
+
+
+
+
+
+### Question 2 - Acceptance criteria
+
+1. See the board: Three columns render with the labels Want to Read, Currently Reading, Finished, in that order. An empty column shows a visible empty state rather than blank space. All existing cards appear in the correct column on load.
+
+2\. Add a card: A visible "add card" action exists on at least the Want to Read column. Submitting with a title and author creates a card showing both fields. Submitting with an empty title is rejected with a visible message, no blank card is created.
+
+3\. Move a card: A card can be dragged (or moved via an equivalent control) from any column to any other column. The card's column position updates immediately without a page reload. The card retains its title/author after the move.
+
+4\. Edit a card: An edit action is reachable from the card. Changing the title or author and confirming updates the visible card text immediately. Cancelling an edit leaves the original values unchanged.
+
+5\. Delete a card: A delete action is reachable from the card. Confirming removes the card from the board immediately. The action requires a confirmation step (e.g. a confirm dialog) so an accidental click can't silently delete.
+
+
+
+### Question 3 - INVEST check
+
+Picking story 3 (move a card between columns):
+
+
+
+Independent — fails. It can't be built or demoed without stories 1 (the board existing) and 2 (a card existing to move), so it's not truly independent of the rest of Sprint 1.
+
+Negotiable — passes. Whether it's drag-and-drop or a dropdown/button-based move is still an open implementation choice.
+
+Valuable — passes. This is the core loop of the whole app.
+
+Estimable — passes, now that it's broken into the 3 subtasks from 2.3 (drag handler, persist state, handle invalid drops).
+
+Small — borderline fail. Needing 3 subtasks to even estimate it is itself a sign it's carrying more than one story's worth of work.
+
+Testable — passes, per the acceptance criteria above.
+
+
+
+It fails Independent structurally (that's fine, sequencing handles it) but the Small failure is the one worth fixing: I'd split "handle invalid drop targets" out into its own follow-up story instead of a subtask, since it's really an edge-case/robustness concern rather than core to "move a card." That shrinks story 3 down to just drag + persist, and moves error handling to a Sprint 2 candidate.
+
+
+
+### Question 4 - Estimating alone, again
+
+
+
+Using "add a book card" as the reference story (2 points, a simple form + list insert):
+
+
+
+Story: See the board  
+
+Points: 3
+
+Why: More structural than it sounds, three columns, empty states, initial load logic
+
+
+
+Story: Add a book card
+
+Points: 2
+
+Why: Reference story
+
+
+
+Story: Move a card between columns
+
+Points: 5
+
+Why: The 3-subtask breakdown from 2.3 makes this the biggest item by a clear margin
+
+
+
+Story: Edit a card
+
+Points: 3
+
+Why: Similar shape to add, plus needing to locate/update the right card
+
+
+
+Story: Delete a card
+
+Points: 1
+
+Why: Smallest, removal plus a confirm step
+
+&#x20;                 
+
+The surprise: "move a card" felt like a Medium effort item back in Assignment 2.3 (that's literally what I tagged it), but once it's decomposed into real subtasks it's the biggest story in the sprint at 5 points, more than double the reference story. Breaking it down revealed complexity the one-line phrasing hid.
+
+
+
+### NOTES.md Updates-Assignment 2.4
+
+
+
+NOTES.md Updates
+
+
+
+1\. What changed between backlog phrase and real story
+
+"Delete a card" looked like the smallest, most obvious item in Sprint 1, a one-line phrase with an equally obvious meaning. Writing the full story ("As a reader who added something by mistake or no longer cares to track it, I want to delete a card so that my shelf only shows books I'm actually tracking") forced me to name why someone deletes a card, and that surfaced two different reasons: a mistake versus genuinely losing interest. That distinction is what led to the acceptance criteria requiring a confirmation step, a raw backlog phrase like "user can delete a note" gives no reason to think about accidental deletion at all, it just reads as a CRUD checkbox.
+
+
+
+2\. The retro, from the inside
+
+\[To be filled in after TrackFlow's mock sprint retro in class, this needs an actual thing someone in the group said or a pattern that came up live, not something I can draft in advance.]
+
+
+
+3\. Estimating with real stories vs. rough backlog items
+
+Less confident, in a useful way. In Assignment 2.2 I estimated Boards \& Cards items as roughly equivalent effort just from their one-line phrasing. With real acceptance criteria in front of me in Assignment 2.4, "move a card between columns" clearly needed 5 points against a 2-point reference story, more than double, once I could see the actual conditions (drag handling, state persistence, invalid drop targets) rather than a short sentence. The estimates feel more trustworthy now specifically because they were harder to produce, I couldn't estimate from a vibe, I had to check the story against something concrete.
+
+
+
+
 
